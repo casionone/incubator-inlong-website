@@ -11,7 +11,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/logo.png',
+  favicon: 'img/favicon.ico',
   organizationName: 'Apache Linkis', // Usually your GitHub org/user name.
   projectName: 'Apache Linkis', // Usually your repo name.
   i18n: {
@@ -68,85 +68,107 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         items: [
           {
             to: '/',
-            position: 'right',
-            label: 'HOME',
+            position: 'left',
+            label: 'Home',
             activeBaseRegex: `^/$`,
           },
-          {
-            position: 'right',
-            label: 'DOC',
-            to: "/docs/user_guide/quick_start",
-            items: [
-              {
-                label: "Next",
-                to: "/docs/next/user_guide/quick_start",
-              },
-              {
-                label: "0.11.0",
-                to: "/docs/user_guide/quick_start",
-              },
-              {
-                label: "All versions",
-                to: "/versions/",
-              },
-            ],
-          },
+//          {
+//            position: 'left',
+//            label: 'Doc',
+//            to: "/docs/user_guide/quick_start",
+//            items: [
+//              {
+//                label: "Next",
+//                to: "/docs/next/user_guide/quick_start",
+//              },
+//              {
+//                label: "0.11.0",
+//                to: "/docs/user_guide/quick_start",
+//              },
+//              {
+//                label: "All versions",
+//                to: "/versions/",
+//              },
+//            ],
+//          },
           {
             to: '/download/main',
-            position: 'right',
-            label: 'DOWNLOAD',
+            position: 'left',
+            label: 'Download',
             activeBaseRegex: `/download/`,
           },
           {
             to: '/development/how-to-contribute',
-            label: 'DEVELOPMENT',
-            position: 'right',
+            label: 'Development',
+            position: 'left',
             activeBaseRegex: `/development/`,
           },
           {
             to: '/blog/new-committer-join',
-            label: 'BLOG',
-            position: 'right'
+            label: 'Blog',
+            position: 'left'
           },
-          {
-            label: 'ASF',
-            position: 'right',
-            items: [
-              {
-                label: "Foundation",
-                to: "https://www.apache.org/",
-              },
-              {
-                label: "License",
-                to: "https://www.apache.org/licenses/",
-              },
-              {
-                label: "Events",
-                to: "https://www.apache.org/events/",
-              },
-              {
-                label: "Security",
-                to: "https://www.apache.org/security/",
-              },
-              {
-                label: "Sponsorship",
-                to: "https://www.apache.org/foundation/sponsorship.html",
-              },
-              {
-                label: "Thanks",
-                to: "https://www.apache.org/foundation/thanks.html",
-              },
-            ],
-          },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/apache/incubator-inlong',
-            label: 'GitHub',
-            position: 'right',
-          },
+//          {
+//            label: 'ASF',
+//            position: 'left',
+//            items: [
+//              {
+//                label: "Foundation",
+//                to: "https://www.apache.org/",
+//              },
+//              {
+//                label: "License",
+//                to: "https://www.apache.org/licenses/",
+//              },
+//              {
+//                label: "Events",
+//                to: "https://www.apache.org/events/",
+//              },
+//              {
+//                label: "Security",
+//                to: "https://www.apache.org/security/",
+//              },
+//              {
+//                label: "Sponsorship",
+//                to: "https://www.apache.org/foundation/sponsorship.html",
+//              },
+//              {
+//                label: "Thanks",
+//                to: "https://www.apache.org/foundation/thanks.html",
+//              },
+//            ],
+//          },
+//          {
+//            type: 'localeDropdown',
+//            position: 'right',
+//          },
+//          {
+//            href: 'https://github.com/apache/incubator-inlong',
+//            label: 'GitHub',
+//            position: 'right',
+//          },
+
+           {
+                    type: 'docsVersionDropdown',
+                    position: 'right',
+                    dropdownActiveClassDisabled: true,
+                    dropdownItemsAfter: [
+                      {
+                        to: '/versions',
+                        label: 'All versions',
+                      },
+                    ],
+                  },
+                  {
+                    href: 'https://github.com/apache/incubator-linkis',
+                    label: 'GitHub',
+                    position: 'right',
+                  },
+                  {
+                    type: "localeDropdown",
+                    position: "right",
+                 },
+
         ],
       },
 //      footer: {
@@ -211,14 +233,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             {
               title: 'Linkis',
               items: [
-                {
-                    label: 'Documentation',
-                    to: '/docs',
-                },
-                {
-                  label: 'FAQ',
-                  to: '/faq',
-                },
+//                {
+//                    label: 'Documentation',
+//                    to: '/docs',
+//                },
+//                {
+//                  label: 'FAQ',
+//                  to: '/faq',
+//                },
                 {
                   label: 'Releases',
                   href: 'https://github.com/apache/incubator-linkis/releases',

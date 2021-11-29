@@ -1,9 +1,9 @@
 {
-  "item.label.HOME": {
+  "item.label.Home": {
     "message": "首页",
     "description": "Navbar item with label HOME"
   },
-  "item.label.DOC": {
+  "item.label.Doc": {
     "message": "文档",
     "description": "Navbar item with label DOC"
   },
@@ -11,15 +11,15 @@
     "message": "Next",
     "description": "Navbar item with label Next"
   },
-  "item.label.DOWNLOAD": {
+  "item.label.Download": {
     "message": "下载",
     "description": "Navbar item with label DOWNLOAD"
   },
-  "item.label.DEVELOPMENT": {
+  "item.label.Development": {
     "message": "开发",
     "description": "Navbar item with label DEVELOPMENT"
   },
-  "item.label.BLOG": {
+  "item.label.Blog": {
     "message": "博客",
     "description": "Navbar item with label BLOG"
   },

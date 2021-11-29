@@ -1,4 +1,4 @@
-const img = [
+[
     {"url":"招联消费金融有限公司.png"},
     {"url":"平安.png"},
     {"url":"荣耀.png"},
@@ -34,7 +34,5 @@ const img = [
     {"url":"圈外同学.png"},
     {"url":"云徒科技.png"},
     {"url":"成都大数据.png"},
-//    {"url":"杭州电魂网络.png"},
     {"url":"桔子分期.png"}
 ]
-export default img
