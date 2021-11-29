@@ -5,15 +5,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
   // omit unrelated docusaurus options
-  title: 'Apache Inlong',
-  tagline: 'Apache Inlong',
-  url: 'https://inlong.apache.org',
+  title: 'Apache Linkis',
+  tagline: 'Apache Linkis',
+  url: 'https://linkis.apache.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/logo.svg',
-  organizationName: 'Apache Inlong', // Usually your GitHub org/user name.
-  projectName: 'Apache Inlong', // Usually your repo name.
+  favicon: 'img/logo.png',
+  organizationName: 'Apache Linkis', // Usually your GitHub org/user name.
+  projectName: 'Apache Linkis', // Usually your repo name.
   i18n: {
     defaultLocale: "en",
     locales: ["en", "zh-CN"],
@@ -56,14 +56,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     ({
       announcementBar: {
         id: 'announcementBar-2', // Increment on change
-        content: `⭐️ &nbsp; If you like Apache InLong , give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/apache/incubator-inlong">GitHub</a>`,
+        content: `⭐️ &nbsp; If you like Apache Linkis , give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/apache/incubator-linkis">GitHub</a>`,
         backgroundColor: "#BBDFFF",
       },
       navbar: {
-        title: 'Apache InLong',
+        title: 'Apache Linkis(Incubating)',
         logo: {
           alt: 'Apache',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
@@ -149,61 +149,136 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           },
         ],
       },
-      footer: {
-        // style: 'dark',
-        // links: [
-        //   {
-        //     title: 'Docs',
-        //     items: [
-        //       {
-        //         label: 'Tutorial',
-        //         to: '/docs/quick_start',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'Community',
-        //     items: [
-        //       {
-        //         label: 'Stack Overflow',
-        //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        //       },
-        //       {
-        //         label: 'Discord',
-        //         href: 'https://discordapp.com/invite/docusaurus',
-        //       },
-        //       {
-        //         label: 'Twitter',
-        //         href: 'https://twitter.com/docusaurus',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'More',
-        //     items: [
-        //       {
-        //         label: 'Blog',
-        //         to: '/blog',
-        //       },
-        //       {
-        //         label: 'GitHub',
-        //         href: 'https://github.com/apache/incubator-inlong',
-        //       },
-        //     ],
-        //   },
-        // ],
-        logo: {
-          alt: 'Apache Inlong',
-          src: 'img/incubator-logo.svg',
-          href: 'https://inlong.apache.org',
+//      footer: {
+//        // style: 'dark',
+//        // links: [
+//        //   {
+//        //     title: 'Docs',
+//        //     items: [
+//        //       {
+//        //         label: 'Tutorial',
+//        //         to: '/docs/quick_start',
+//        //       },
+//        //     ],
+//        //   },
+//        //   {
+//        //     title: 'Community',
+//        //     items: [
+//        //       {
+//        //         label: 'Stack Overflow',
+//        //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+//        //       },
+//        //       {
+//        //         label: 'Discord',
+//        //         href: 'https://discordapp.com/invite/docusaurus',
+//        //       },
+//        //       {
+//        //         label: 'Twitter',
+//        //         href: 'https://twitter.com/docusaurus',
+//        //       },
+//        //     ],
+//        //   },
+//        //   {
+//        //     title: 'More',
+//        //     items: [
+//        //       {
+//        //         label: 'Blog',
+//        //         to: '/blog',
+//        //       },
+//        //       {
+//        //         label: 'GitHub',
+//        //         href: 'https://github.com/apache/incubator-inlong',
+//        //       },
+//        //     ],
+//        //   },
+//        // ],
+//        logo: {
+//          alt: 'Apache Linkis',
+//          src: 'img/incubator-logo.svg',
+//          href: 'https://inlong.apache.org',
+//        },
+//        copyright: `<div style="text-align: left;">
+//          <div>
+//            <p style="font-family: Avenir-Medium;font-size: 14px;color: #999;line-height: 20px;">Apache InLong (incubating) is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>
+//          </div>
+//          <div style="border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;"><span>Copyright © 2019-2020 The Apache Software Foundation. Apache InLong, InLong, and its feather logo are trademarks of The Apache Software Foundation.</span></div>
+//        </div>`,
+//      },
+
+     footer: {
+          style: 'light',
+          links: [
+            {
+              title: 'Linkis',
+              items: [
+                {
+                    label: 'Documentation',
+                    to: '/docs',
+                },
+                {
+                  label: 'FAQ',
+                  to: '/faq',
+                },
+                {
+                  label: 'Releases',
+                  href: 'https://github.com/apache/incubator-linkis/releases',
+                },
+              ],
+            },
+            {
+              title: 'Community',
+              items: [
+                {
+                  label: 'GitHub',
+                  href: 'https://github.com/apache/incubator-linkis',
+                },
+                {
+                  label: 'Issue Tracker',
+                  href: 'https://github.com/apache/incubator-linkis/issues',
+                },
+                {
+                  label: 'Pull Requests',
+                  href: 'https://github.com/apache/incubator-linkis/pulls',
+                },
+              ],
+            },
+            {
+              title: 'Apache Software Foundation',
+              items: [
+                {
+                  label: 'Foundation',
+                  href: 'https://www.apache.org/',
+                },
+                {
+                  label: 'License',
+                  href: 'https://www.apache.org/licenses/LICENSE-2.0',
+                },
+                {
+                  label: 'Sponsorship',
+                  href: 'https://www.apache.org/foundation/sponsorship.html',
+                },
+                {
+                  label: 'Thanks',
+                  href: 'http://www.apache.org/foundation/thanks.html',
+                },
+              ],
+            },
+          ],
+//          copyright: `
+//            Copyright © ${new Date().getFullYear()} The Apache Software Foundation.
+//            Apache Linkis, Apache Incubator, Linkis, Apache, the Apache feather logo,
+//            the Apache Linkis logo and the Apache Incubator project logo
+//            are trademarks of The Apache Software Foundation.
+//          `,
+//        logo: {
+//          alt: 'Apache Linkis',
+//          src: 'img/incubator-logo.svg',
+//          href: 'https://linkis.apache.org',
+//        },
+         copyright: `<div><img style="height:50px" alt="Apache Software Foundation" src="/img/incubator-logo.svg" /><p style="color: #999999;  padding: 0 20px 30px;font-weight:400;text-align:left">Apache Linkis is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p></p>
+             <p style="padding: 0 20px 30px;color: #999999;font-weight: 400;"> Copyright © ${new Date().getFullYear()} The Apache Software Foundation. Licensed under the Apache License, Version 2.0. Apache Linkis, Apache Incubator, Apache, the Apache feather logo, the Apache Linkis logo and the Apache Incubator project logo are trademarks of The Apache Software Foundation.</p>
+             <div>`,
         },
-        copyright: `<div style="text-align: left;">
-          <div>
-            <p style="font-family: Avenir-Medium;font-size: 14px;color: #999;line-height: 20px;">Apache InLong (incubating) is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>
-          </div>
-          <div style="border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;"><span>Copyright © 2019-2020 The Apache Software Foundation. Apache InLong, InLong, and its feather logo are trademarks of The Apache Software Foundation.</span></div>
-        </div>`,
-      },
       prism: {
         theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
