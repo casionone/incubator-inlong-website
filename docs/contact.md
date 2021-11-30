@@ -2,9 +2,6 @@
 title: Contact Us
 sidebar_position: 10
 ---
-
--------
-- Ask questions on: [Apache Linkis Slack](https://the-asf.slack.com/archives/C01QAG6U00L)
 - Mailing lists:
 
     | Name                                                                          | Scope                           |                                                                 |                                                                     |                                                                              |
