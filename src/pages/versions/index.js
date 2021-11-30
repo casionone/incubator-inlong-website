@@ -22,7 +22,7 @@ export default function() {
                 <p>{dataSource.newVersionExplain}</p>
                 <table>
                     <tr>
-                        <td>0.11.0</td>
+                        <td>1.0.2</td>
                         <td>
                             <a href={dataSource.table.latestUrl}>{dataSource.table.doc}</a>
                         </td>
@@ -30,7 +30,7 @@ export default function() {
                             <a href={dataSource.table.releaseUrlOne}>{dataSource.table.release}</a>
                         </td>
                         <td>
-                            <a href="https://github.com/apache/incubator-inlong">{dataSource.table.source}</a>
+                            <a href="https://github.com/apache/incubator-linkis">{dataSource.table.source}</a>
                         </td>
                     </tr>
                 </table>
@@ -50,7 +50,7 @@ export default function() {
                 <p>{dataSource.passVersionExplain}</p>
                 <table>
                     <tr>
-                        <td>0.11.0</td>
+                        <td>1.0.2</td>
                         <td>
                             <a href={dataSource.table.link}>{dataSource.table.doc}</a>
                         </td>
@@ -58,7 +58,7 @@ export default function() {
                             <a href={dataSource.table.releaseUrlOne}>{dataSource.table.release}</a>
                         </td>
                         <td>
-                            <a href="https://github.com/apache/incubator-inlong">{dataSource.table.source}</a>
+                            <a href="https://github.com/apache/incubator-linkis">{dataSource.table.source}</a>
                         </td>
                     </tr>
                 </table>

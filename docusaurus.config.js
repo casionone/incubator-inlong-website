@@ -35,15 +35,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          sidebarCollapsible: false,
+          sidebarCollapsible: true,
+          editLocalizedFiles: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/apache/incubator-inlong-website/edit/master/',
+          editUrl: 'https://github.com/apache/incubator-linkis-website/edit/master/',
         },
         blog: {
           // showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/apache/incubator-inlong-website/edit/master/blog/',
+            'https://github.com/apache/incubator-linkis-website/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -91,8 +92,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 //              },
 //            ],
 //          },
+        {
+            to: '/faq/index',
+            position: 'left',
+            label: 'FAQ',
+            activeBaseRegex: `/faq/`,
+          },
           {
-            to: '/download/main',
+            to: '/download/index',
             position: 'left',
             label: 'Download',
             activeBaseRegex: `/download/`,
@@ -104,10 +111,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             activeBaseRegex: `/development/`,
           },
           {
-            to: '/blog/new-committer-join',
+              to: '/team',
+              label: 'Team',
+              position: 'left',
+              activeBaseRegex: `/team`,
+          },
+          {
+            to: '/blog/how-to-used',
             label: 'Blog',
             position: 'left'
           },
+
+
 //          {
 //            label: 'ASF',
 //            position: 'left',
@@ -143,31 +158,50 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 //            position: 'right',
 //          },
 //          {
-//            href: 'https://github.com/apache/incubator-inlong',
+//            href: 'https://github.com/apache/incubator-Linkis',
 //            label: 'GitHub',
 //            position: 'right',
 //          },
 
+          {
+            position: 'right',
+            label: 'Doc',
+            to: "/docs/user_guide/quick_start",
+            items: [
+              {
+                label: "Next",
+                to: "/docs/next/user_guide/quick_start",
+              },
+              {
+                label: "1.0.2",
+                to: "/docs/user_guide/quick_start",
+              },
+              {
+                label: "All versions",
+                to: "/versions/",
+              },
+            ],
+          },
+//           {
+//              type: 'docsVersionDropdown',
+//              position: 'right',
+//              dropdownActiveClassDisabled: true,
+//              dropdownItemsAfter: [
+//                {
+//                  to: '/versions',
+//                  label: 'All versions',
+//                },
+//              ],
+//           },
            {
-                    type: 'docsVersionDropdown',
-                    position: 'right',
-                    dropdownActiveClassDisabled: true,
-                    dropdownItemsAfter: [
-                      {
-                        to: '/versions',
-                        label: 'All versions',
-                      },
-                    ],
-                  },
-                  {
-                    href: 'https://github.com/apache/incubator-linkis',
-                    label: 'GitHub',
-                    position: 'right',
-                  },
-                  {
-                    type: "localeDropdown",
-                    position: "right",
-                 },
+              href: 'https://github.com/apache/incubator-linkis',
+              label: 'GitHub',
+              position: 'right',
+           },
+           {
+              type: "localeDropdown",
+              position: "right",
+           },
 
         ],
       },
@@ -209,7 +243,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 //        //       },
 //        //       {
 //        //         label: 'GitHub',
-//        //         href: 'https://github.com/apache/incubator-inlong',
+//        //         href: 'https://github.com/apache/incubator-Linkis',
 //        //       },
 //        //     ],
 //        //   },
@@ -217,7 +251,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 //        logo: {
 //          alt: 'Apache Linkis',
 //          src: 'img/incubator-logo.svg',
-//          href: 'https://inlong.apache.org',
+//          href: 'https://Linkis.apache.org',
 //        },
 //        copyright: `<div style="text-align: left;">
 //          <div>
@@ -316,9 +350,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         routeBasePath: 'development',
         editUrl: ({locale, versionDocsDirPath, docPath}) => {
           if (locale !== 'en') {
-            return `https://github.com/apache/incubator-inlong-website/edit/master/i18n/${locale}/${docPath}`;
+            return `https://github.com/apache/incubator-linkis-website/edit/master/i18n/${locale}/${docPath}`;
           }
-          return `https://github.com/apache/incubator-inlong-website/edit/master/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/apache/incubator-linkis-website/edit/master/${versionDocsDirPath}/${docPath}`;
         },
         sidebarPath: require.resolve('./sidebarsDevelopment.js'),
       },
@@ -331,12 +365,28 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         routeBasePath: 'download',
         editUrl: ({locale, versionDocsDirPath, docPath}) => {
           if (locale !== 'en') {
-            return `https://github.com/apache/incubator-inlong-website/edit/master/i18n/${locale}/${docPath}`;
+            return `https://github.com/apache/incubator-linkis-website/edit/master/i18n/${locale}/${docPath}`;
           }
-          return `https://github.com/apache/incubator-inlong-website/edit/master/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/apache/incubator-linkis-website/edit/master/${versionDocsDirPath}/${docPath}`;
         },
         sidebarPath: require.resolve('./sidebarsDevelopment.js'),
       },
     ],
+
+     [
+          '@docusaurus/plugin-content-docs',
+          {
+            id: 'FAQ',
+            path: 'faq',
+            routeBasePath: 'faq',
+            editUrl: ({locale, versionDocsDirPath, docPath}) => {
+              if (locale !== 'en') {
+                return `https://github.com/apache/incubator-linkis-website/edit/master/i18n/${locale}/${docPath}`;
+              }
+              return `https://github.com/apache/incubator-linkis-website/edit/master/${versionDocsDirPath}/${docPath}`;
+            },
+            sidebarPath: require.resolve('./sidebarsDevelopment.js'),
+          },
+        ],
   ]
 });

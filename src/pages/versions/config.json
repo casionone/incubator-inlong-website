@@ -1,6 +1,6 @@
 {
   "zh-CN": {
-    "title": "Apache InLong 所有文档版本",
+    "title": "Apache Linkis 所有文档版本",
     "newVersion": "这是当前的文档版本",
     "newVersionExplain": "在这里您可以找到当前发布的文档版本",
     "nextVersion": "这是未发布文档版本",
@@ -11,7 +11,7 @@
       "doc": "文档",
       "link": "/zh-CN/docs/user_guide/quick_start",
       "release": "Release Note",
-      "releaseUrlOne": "/zh-CN/download/release-0.11.0",
+      "releaseUrlOne": "/zh-CN/download/release-1.0.2",
       "nextLink": "/zh-CN/docs/next/user_guide/quick_start",
       "latestUrl": "/zh-CN/docs/user_guide/quick_start",
       "source": "源代码"
@@ -19,7 +19,7 @@
 
   },
   "en": {
-    "title": "Apache InLong all document versions",
+    "title": "Apache Linkis all document versions",
     "newVersion": "This is the current document version",
     "newVersionExplain": "Here you can find the currently published version of the document",
     "nextVersion": "This is an unpublished document version",
@@ -30,7 +30,7 @@
       "doc": "Document",
       "link": "/docs/user_guide/quick_start",
       "release": "Release Note",
-      "releaseUrlOne": "/download/release-0.11.0",
+      "releaseUrlOne": "/download/release-1.0.2",
       "nextLink": "/docs/next/user_guide/quick_start",
       "latestUrl": "/docs/user_guide/quick_start",
       "source": "Source Code"
