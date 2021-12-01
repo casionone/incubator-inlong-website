@@ -9,7 +9,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   tagline: 'Apache Linkis',
   url: 'https://linkis.apache.org',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Apache Linkis', // Usually your GitHub org/user name.
@@ -376,7 +376,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
      [
           '@docusaurus/plugin-content-docs',
           {
-            id: 'FAQ',
+            id: 'faq',
             path: 'faq',
             routeBasePath: 'faq',
             editUrl: ({locale, versionDocsDirPath, docPath}) => {

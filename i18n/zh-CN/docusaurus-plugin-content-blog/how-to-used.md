@@ -1,4 +1,4 @@
-# Q&A 
+# Q&A  中文
 #### Q1, linkis startup error: NoSuchMethodErrorgetSessionManager()Lorg/eclipse/jetty/server/SessionManager
 
 Specific stack:
