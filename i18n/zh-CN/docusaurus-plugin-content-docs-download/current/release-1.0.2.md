@@ -1,62 +1,77 @@
-# InLong Release-0.3.0
-  使用以下镜像下载InLong
+# Linkis Release-1.0.2
+  使用以下链接下载Linkis
 
 ## InLong
 | 日期 | 版本| 备注 | 下载 |
 |:---:|:--:|:--:|:--:|
-| 2020-06-06 | 0.3.0 | 源码 | [[SRC](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-0.3.0-incubating-src.tar.gz)]                 [[ASC](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-0.3.0-incubating-src.tar.gz.asc)]             [[SHA512](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-0.3.0-incubating-src.tar.gz.sha512)] |
-| |                       | 客户端 | [[TAR](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-client-0.3.0-incubating-bin.tar.gz)]          [[ASC](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-client-0.3.0-incubating-bin.tar.gz.asc)]      [[SHA512](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-client-0.3.0-incubating-bin.tar.gz.sha512)] |
-| |                       | 服务端 | [[TAR](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-server-0.3.0-incubating-bin.tar.gz)]          [[ASC](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-server-0.3.0-incubating-bin.tar.gz.asc)]      [[SHA512](https://archive.apache.org/dist/incubator/tubemq/0.3.0-incubating/apache-tubemq-server-0.3.0-incubating-bin.tar.gz.sha512)] |
+| 2021-09-02| 1.0.2 | 源码 | [[SRC](https://github.com/apache/incubator-linkis/archive/refs/tags/1.0.2.tar.gz)]                 [[PGP](NULL)]             [[SHA512](NULL)] |
+| |                 | 二进制包 | [[BIN](https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/Linkis/1.0.2/wedatasphere-linkis-1.0.2-combined-package-dist.tar.gz)]  [[PGP](NULL)]     [[SHA512](NULL)] |
+
 
 ### 发布完整性
-   您必须[验证](https://www.apache.org/info/verification.html) 下载文件的完整性。 我们为每个发布文件提供 OpenPGP 签名。 此签名应与包含 InLong 发布经理的 OpenPGP 密钥的 [KEYS](https://downloads.apache.org/incubator/inlong/KEYS) 文件匹配。 我们还为每个发布文件提供 <code>SHA-512</code> 校验和。 下载文件后，您应该计算下载的校验和，并确保它与我们的相同。
+   您必须[验证](https://www.apache.org/info/verification.html) 下载文件的完整性。 我们为每个发布文件提供 OpenPGP 签名。 此签名应与包含 InLong 发布经理的 OpenPGP 密钥的 [KEYS](https://downloads.apache.org/incubator/linkis/KEYS) 文件匹配。 我们还为每个发布文件提供 <code>SHA-512</code> 校验和。 下载文件后，您应该计算下载的校验和，并确保它与我们的相同。
 
 ## 发版说明
 
-### 新特性
- - [[INLONG-42](https://issues.apache.org/jira/browse/INLONG-42)] Add peer information about message received Major New Feature
- 
-### 改进
- - [[INLONG-7](https://issues.apache.org/jira/browse/INLONG-7)] Using StringBuilder instead of StringBuffer in BaseResult
- - [[INLONG-9](https://issues.apache.org/jira/browse/INLONG-9)] Remove some unnecessary code
- - [[INLONG-16](https://issues.apache.org/jira/browse/INLONG-16)] Correct BdbStoreService#isPrimaryNodeActived to BdbStoreService#isPrimaryNodeActive
- - [[INLONG-18](https://issues.apache.org/jira/browse/INLONG-18)] Correct TMaster#idGenerater to TMaster#idGenerator
- - [[INLONG-19](https://issues.apache.org/jira/browse/INLONG-19)] Correct parameter names to fit in camel case
- - [[INLONG-20](https://issues.apache.org/jira/browse/INLONG-20)] Correct DefaultLoadBalancer#balance parameter
- - [[INLONG-21](https://issues.apache.org/jira/browse/INLONG-21)] Change version number from x.y-SNAPSHOT to x.y.z-incubating-SNAPSHOT
- - [[INLONG-22](https://issues.apache.org/jira/browse/INLONG-22)] Correct ClientSubInfo#getTopicProcesser -> ClientSubInfo#getTopicProcessor
- - [[INLONG-23](https://issues.apache.org/jira/browse/INLONG-23)] Improve project README content introduction
- - [[INLONG-24](https://issues.apache.org/jira/browse/INLONG-24)] Add NOTICE and adjust LICENSE
- - [[INLONG-26](https://issues.apache.org/jira/browse/INLONG-26)] correct spelling (difftime-> diffTime)
- - [[INLONG-27](https://issues.apache.org/jira/browse/INLONG-27)] replace StringBuffer with StringBuilder
- - [[INLONG-28](https://issues.apache.org/jira/browse/INLONG-28)] ignore path error
- - [[INLONG-29](https://issues.apache.org/jira/browse/INLONG-29)] Change the package name to org.apache.tubemq.""
- - [[INLONG-33](https://issues.apache.org/jira/browse/INLONG-33)] refactor enum implement from annoymouse inner class
- - [[INLONG-38](https://issues.apache.org/jira/browse/INLONG-38)] Correct DefaultLoadBalancer#balance parameter
- - [[INLONG-39](https://issues.apache.org/jira/browse/INLONG-39)] Optimize the loadMessageStores() logic
- - [[INLONG-40](https://issues.apache.org/jira/browse/INLONG-40)] Optimize message disk store classes's logic
- - [[INLONG-43](https://issues.apache.org/jira/browse/INLONG-43)] Add DeletePolicy's value check
- - [[INLONG-44](https://issues.apache.org/jira/browse/INLONG-44)] Remove unnecessary synchronized definition of shutdown () function
- - [[INLONG-49](https://issues.apache.org/jira/browse/INLONG-49)] setTimeoutTime change to updTimeoutTime
- - [[INLONG-50](https://issues.apache.org/jira/browse/INLONG-50)] Replace fastjson to gson
- 
- 
-### Bug修复
- - [[INLONG-10](https://issues.apache.org/jira/browse/INLONG-10)] Fix Javadoc error
- - [[INLONG-14](https://issues.apache.org/jira/browse/INLONG-14)] Some compilation errors
- - [[INLONG-15](https://issues.apache.org/jira/browse/INLONG-15)] Correct typo in http_access_API_definition.md
- - [[INLONG-32](https://issues.apache.org/jira/browse/INLONG-32)] File path not match with package name in tubemq-client module
- - [[INLONG-35](https://issues.apache.org/jira/browse/INLONG-35)] check illegal package's field value
- - [[INLONG-36](https://issues.apache.org/jira/browse/INLONG-36)] Remove unnecessary removefirst() function printing
- - [[INLONG-37](https://issues.apache.org/jira/browse/INLONG-37)] Offset is set to 0 when Broker goes offline
- - [[INLONG-45](https://issues.apache.org/jira/browse/INLONG-45)] Check groupName with checkHostName function
- - [[INLONG-48](https://issues.apache.org/jira/browse/INLONG-48)] No timeout when setting consumer timeout
- - [[INLONG-59](https://issues.apache.org/jira/browse/INLONG-59)] Null pointer exception is thrown while constructing ConsumerConfig with MasterInfo
- - [[INLONG-62](https://issues.apache.org/jira/browse/INLONG-62)] consumed and set consumerConfig.setConsumeModel (0) for the first time
- - [[INLONG-66](https://issues.apache.org/jira/browse/INLONG-66)] TubeSingleSessionFactory shutdown bug
- - [[INLONG-85](https://issues.apache.org/jira/browse/INLONG-85)] There is NPE when creating PullConsumer with TubeSingleSessionFactory
- - [[INLONG-88](https://issues.apache.org/jira/browse/INLONG-88)] Broker does not take effect after the deletePolicy value is changed
- - [[INLONG-149](https://issues.apache.org/jira/browse/INLONG-149)] Some of the consumers stop consuming their corresponding partitions and never release the partition to others
- - [[INLONG-153](https://issues.apache.org/jira/browse/INLONG-153)] Some of the consumers stop consuming their corresponding partitions and never release the partition to others
- - [[INLONG-165](https://issues.apache.org/jira/browse/INLONG-165)] Remove unnecessary fiiles
+Linkis-1.0.2 includes all of [Project Linkis-1.0.2](https://github.com/WeBankFinTech/Linkis/projects/11).
+
+This release mainly introduces Flink-support into Linkis ecosystem. 
+
+The following key features are added: 
+* Flink-EngineConn which offers solid support for Flink jobs. Executing, debugging and monitoring Flink SQL or applications are now available, together with SQL-enhancement ability powered by Linkis Orchestrator.
+* LinkisManagerClient which enables direct access to LinkisManager.  Submitting and managing OnceJob rely on this feature.
+
+
+Abbreviations:
+
+CGS: Computation Governance Services
+
+PES: Public Enhancement Services
+
+MGS: Microservice Governance Services
+
+---
+
+## New Feature
+
+#### EngineConn
+* [Linkis-936](https://github.com/WeBankFinTech/Linkis/pull/936)  [CGS-LinkisOnceEngineconn] supports OnceEngineExecutor
+
+#### EnginePlugin
+* [Linkis-935](https://github.com/WeBankFinTech/Linkis/pull/935)  [CGS-EngineConnPlugin-Flink] supports Flink EngineConn
+* [Linkis-947](https://github.com/WeBankFinTech/Linkis/pull/947)  [CGS-EngineConnPlugin-Flink] supports executing Flink SQL and Flink applications
+* [Linkis-948](https://github.com/WeBankFinTech/Linkis/pull/948)  [CGS-EngineConnPlugin-Flink] multiple-datasource support for Flink EngineConn
+* [Linkis-949](https://github.com/WeBankFinTech/Linkis/pull/949)  [CGS-EngineConnPlugin-Flink] monitoring Flink Metrics
+
+#### ComputationClient
+* [Linkis-937](https://github.com/WeBankFinTech/Linkis/pull/937)  [CGS-LinkisComputationClient] supports OnceEngineExecutor client
+
+---
+
+## Enhancement
+* [Linkis-953](https://github.com/WeBankFinTech/Linkis/pull/953)  [CGS-LinkisManager] label supports '-' in hostname
+* [Linkis-925](https://github.com/WeBankFinTech/Linkis/pull/925)  [MGS-LinkisServiceGateway] fix weak password in linkis gateway 
+* [Linkis-950](https://github.com/WeBankFinTech/Linkis/pull/950)  [CGS-LinkisEngineConnManager] support both ip address and hostname for service discovery
+* [Linkis-967](https://github.com/WeBankFinTech/Linkis/pull/967) [CGS-LinkisEntrance] remove instance-label client dependency, Solve the host name and ip judgment abnormality in the gateway router, exclude the pom dependency to pentaho-aggdesigner-algorithm jar.
+* [Linkis-963](https://github.com/WeBankFinTech/Linkis/pull/963)  [PES-LinkisBmlServer] default download user changed to jvm user, and supports to set default download user by configuration.
+
+---
+## Bugs Fix
+
+* [Linkis-938](https://github.com/WeBankFinTech/Linkis/pull/938)  [CGS-LimkisMnagager] fixes a serial execution bug
+* [Linkis-952](https://github.com/WeBankFinTech/Linkis/pull/952)  [CGS-LinkisEngineConn] fixes a redundant thread bug
+* [Linkis-943](https://github.com/WeBankFinTech/Linkis/pull/943)  [CGS-EngineConnPlugin-Hive] fixes a Hive3.0 compilation error
+* [Linkis-961](https://github.com/WeBankFinTech/Linkis/pull/961)  [CGS-EngineConnPlugin-Flink] fixes a Flink-EnginePlugin compilation bug
+* [Linkis-966](https://github.com/WeBankFinTech/Linkis/pull/966)  [CGS-EngineConnPlugin-Hive] [CGS-EnginePlugin-Spark] Solve Spark and hive compatibility issue
+
+## Credits  
+
+The release of Linkis 1.0.2 is inseparable from the contributors of the Linkis community. Thanks to all the community contributors! 
+
+---
+## Compiled Version
+
+1. **Tencent Cloud**:
+
+[Linkis-1.0.2 Compiled (.tar.gz)](https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/WeDatasphere/Linkis/1.0.2/wedatasphere-linkis-1.0.2-combined-package-dist.tar.gz)
  
