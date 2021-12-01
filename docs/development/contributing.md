@@ -1,5 +1,5 @@
 ---
-title: Contributingn
+title: Contributing
 sidebar_position: 3
 ---
 
