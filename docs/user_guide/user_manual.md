@@ -1,286 +1,405 @@
 ---
 title: User Manual
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-## 1 User login
-
-Requires the user to enter the account name and password of the system.
-
-![](/cookbooks_img//image-1624433272455.png)
-
-## 2 Data access
-
-The data access module displays a list of all tasks connected to the system within the current user authority, and can
-view, edit, update and delete the details of these tasks.
-
-Click [Data Access], there are two steps to fill in data access information: business information, data stream.
-
-![](/cookbooks_img//image-1624431177918.png)
-
-### 2.1 Business Information
-
-#### 2.1.1 Business Information
-
-You are required to fill in basic business information for access tasks.
-
-![](/cookbooks_img//image-1624431271642.png)
-
-- Business English ID: Unified lowercase English name, please try to include the product name and concise
-  specifications, such as pay_base
-- Business Chinese name: Chinese description of the business, easy to use and retrieve, up to 128 characters
-- Business responsible person: at least 2 people, the business responsible person can view and modify business
-  information, add and modify all access configuration items
-- Business introduction: Cut SMS to introduce the business background and application of this access task:
-
-#### 2.1.2 Access requirements
-
-Access requirements require users to choose message middleware: high throughput (TUBE):
-
-![](/cookbooks_img//image-1624431306077.png)
-
-High-throughput-Tube: high-throughput message transmission component, suitable for log message transmission.
-
-#### 2.1.3 Access scale
-
-The scale of access requires users to judge the scale of access data in advance, to allocate computing and storage
-resources later.
-
-![](/cookbooks_img//image-1624431333949.png)
-
-### 2.2 Data stream
-
-Click [Next] to enter the data flow information filling step. There are four modules for data flow information filling:
-basic information, data source, data information, and data stream.
-
-In the data flow process, you can click [New Data Stream] to create a new data stream page:
-
-![](/cookbooks_img//image-1624431416449.png)
-
-#### 2.2.1 Basic information
-
-You are required to fill in the basic information of the data stream in the access task:
-
-![](/cookbooks_img//image-1624431435574.png)
-
-- InLong stream id: The prefix is automatically generated according to the product/project, which is unique in a 
-  specific business group and is consistent with the stream id in the data source and the storage table
-- Data stream name: interface information description, the length is limited to 64 characters (32 Chinese characters)
-- Data stream owner: The data stream owner can view and modify data stream information, add and modify all access
-  configuration items
-- Introduction to data flow: simple text introduction to data flow
-
-#### 2.2.2 Data source
-
-You are required to select the source of the data stream.
-
-Currently, three methods of file and independent push are supported, and the detailed information of the data source can
-be supplemented in the advanced options.
-
-- File: The business data is in the file, and the business machine deploys InLong Agent, which is read according to
-  customized policy rules
-- Autonomous push: Push data to the messaging middleware through the SDK
-
-![](/cookbooks_img//image-1624431594406.png)
-
-#### 2.2.3 Data Information
-
-You are required to fill in the data-related information in the data stream.
-
-![](/cookbooks_img//image-1624431617259.png)
-
-- Data Format
-- Data encoding: If the data source contains Chinese, you need choose UTF-8 or GBK, otherwise the encoding format is
-  incorrect and garbled characters after storage
-- Source field separator: the format of data sent to MQ
-- Source data field: attributes with different meanings divided by a certain format in MQ
-
-#### 2.2.4 Data storage
-
-You are required to select the final flow direction of this task, this part is not currently supports both hive storage
-and autonomous push.
-
-![](/cookbooks_img//image-1624431713360.png)
-
-Add HIVE storage:
-
-![](/cookbooks_img//image-1624431787323.png)
-
-- Target database: hive database name (prepared to create in advance)
-- Target table: hive table name
-- First-level partition: the field name of the first-level subdirectory of hdfs data divided by hive data
-- Secondary partition: the field name of the first-level subdirectory of hdfs data divided by hive data
-- Username: hive server connection account name
-- User password: hive server connection account password
-- HDFS url: Hive bottom HDFS connection
-- JDBC url: jdbc url of hive server
-- Field related information: source field name, source field type, HIVE field name, HIVE field type, field description,
-  and support deletion and addition-
-
-## 3 Access details
-
-### 3.1 Execution log
-
-When the status of the data access task is "approved successfully" or "configuration failed", the "execution log"
-function can be used to allow users to view the progress and details of the task.
-
-![](/cookbooks_img//image-1624432002615.png)
-
-Click [Execution Log] to display the details of the task execution log in a pop-up window.
-
-![](/cookbooks_img//image-1624432022859.png)
-
-The execution log will display the task type, execution result, execution log content, end time, and the end time of the
-execution of the access process. If the execution fails, you can "restart" the task and execute it again.
-
-### 3.2 Task details
-
-The business person in charge/following person can view the access details of the task, and can modify and update part
-of the information under the status of [Waiting Applying], [Configuration Successful], and [Configuration Failed].
-
-There are three modules in the access task details: business information, data stream and data storage.
-
-#### 3.2.1 Business Information
-
-Display the basic business information in the access task, click [Edit] to modify part of the content
-
-![](/cookbooks_img//image-1624432076857.png)
-
-#### 3.2.2 Data stream
-
-Display the basic information of the data flow under the access task, click [New Data Flow] to create a new data flow
-information
-
-![](/cookbooks_img//image-1624432092795.png)
-
-#### 3.2.3 Data Storage
-
-Display the basic information of the data flow in the access task, select different flow types through the drop-down
-box, and click [New Flow Configuration] to create a new data storage.
-
-![](/cookbooks_img//image-1624432114765.png)
-
-## 4 Data consumption
-
-Data consumption currently does not support direct consumption access to data, and data can be consumed normally after
-the approval process.
-
-Click [New Consumption] to enter the data consumption process, and you need to fill in information related to
-consumption.
-
-![](/cookbooks_img//image-1624432235900.png)
-
-### 4.1 Consumer Information
-
-Applicants need to gradually fill in the basic consumer business information related to data consumption applications in
-the information filling module
-
-![](/cookbooks_img//image-1624432254118.png)
-
-- Consumer group name: The prefix is automatically generated according to the product/project. The brief name of the
-  consumer must be composed of lowercase letters, numbers, and underscores. The final approval will assign the consumer
-  name based on the abbreviation splicing
-- Consumer Responsible Person: At least 2 persons are required to choose the responsible person; the responsible person
-  can view and modify the consumption information
-- Consumer target business group id: you need to select the business group id of the consumer data, you can click [Query] and 
-  select the appropriate business group id in the pop-up window
-  ![](/cookbooks_img//image-1624432286674.png)
-- Data usage: select data usage usage
-- Data usage description: The applicant needs to briefly explain the items used and the purpose of the data according to
-  their own consumption scenarios After completing the information, click [Submit], and the data consumption process
-  will be formally submitted to the approver before it will take effect.
-
-## 5 Approval management
-
-The approval management function module currently includes my application and my approval, and all tasks of data access
-and consumption application approval in the management system.
-
-### 5.1 My application
-
-Display the current task list submitted by the applicant for data access and consumption in the system, click [Details]
-to view the current basic information and approval process of the task.
-
-![](/cookbooks_img//image-1624432445002.png)
-
-#### 5.1.1 Data access details
-
-Data access task detailed display The current basic information of the application task includes: applicant-related
-information, basic information about application access, and current approval process nodes.
-
-![](/cookbooks_img//image-1624432458971.png)
-
-#### 5.1.2 Data consumption details
-
-Data consumption task details display basic information of current application tasks including: applicant information,
-basic consumption information, and current approval process nodes.
-
-![](/cookbooks_img//image-1624432474526.png)
-
-### 5.2 My approval
-
-As a data access officer and system member with approval authority, have the responsibility for data access or
-consumption approval.
-
-![](/cookbooks_img//image-1624432496461.png)
-
-#### 5.2.1 Data Access Approval
-
-New data access approval: currently it is a first-level approval, which is approved by the system administrator.
-
-The system administrator will review whether the access process meets the access requirements based on the data access
-business information.
-
-![](/cookbooks_img//image-1624432515850.png)
-
-#### 5.2.2 New data consumption approval
-
-New data consume approval: currently it is a first-level approval, which is approved by the person in charge of the
-business.
-
-Business approval: The person in charge of the data access business judges whether the consumption meets the business
-requirements according to the access information:
-
-![](/cookbooks_img//image-1624432535541.png)
-
-## 6 System Management
-
-Only users with the role of system administrator can use this function. They can create, modify, and delete users:
-
-![](/cookbooks_img//image-1624432652141.png)
-
-### 6.1 New user
-
-Users with system administrator rights can create new user accounts
-
-![](/cookbooks_img//image-1624432668340.png)
-
-- Account types: Ordinary users (with data access and data consumption permissions, but without data access approval and
-  account management permissions); system administrators (with data access and data consumption permissions, data access
-  approval and account management permissions)
-- username: username for login
-- user password:
-  -Effective duration: the account can be used in the system
-  ![](/cookbooks_img//image-1624432740241.png)
-
-### 6.2 Delete user
-
-The system administrator can delete the account of the created user. After the deletion, the account will stop using:
-
-![](/cookbooks_img//image-1624432759224.png)
-
-### 6.3 User Edit
-
-The system administrator can modify the created account:
-
-![](/cookbooks_img//image-1624432778845.png)
-
-The system administrator can modify the account type and effective duration to proceed:
-
-![](/cookbooks_img//image-1624432797226.png)
-
-### 6.4 Change password
-
-The user can modify the account password, click [Modify Password], enter the old password and the new password, after
-confirmation, the new password of this account will take effect:
-
-![](/cookbooks_img//image-1624432829313.png)
+# Linkis User Manual
+
+> Linkis provides a convenient interface for calling JAVA and SCALA. It can be used only by introducing the linkis-computation-client module. After 1.0, the method of submitting with Label is added. The following will introduce both ways that compatible with 0.X and newly added in 1.0.
+
+## 1. Introduce dependent modules
+```
+<dependency>
+   <groupId>com.webank.wedatasphere.linkis</groupId>
+   <artifactId>linkis-computation-client</artifactId>
+   <version>${linkis.version}</version>
+</dependency>
+Such as:
+<dependency>
+   <groupId>com.webank.wedatasphere.linkis</groupId>
+   <artifactId>linkis-computation-client</artifactId>
+   <version>1.0.0-RC1</version>
+</dependency>
+```
+
+## 2. Compatible with 0.X Execute method submission
+
+### 2.1 Java test code
+
+Create the Java test class UJESClientImplTestJ. Refer to the comments to understand the purposes of those interfaces:
+
+```java
+package com.webank.wedatasphere.linkis.client.test;
+
+import com.webank.wedatasphere.linkis.common.utils.Utils;
+import com.webank.wedatasphere.linkis.httpclient.dws.authentication.StaticAuthenticationStrategy;
+import com.webank.wedatasphere.linkis.httpclient.dws.authentication.TokenAuthenticationStrategy;
+import com.webank.wedatasphere.linkis.httpclient.dws.config.DWSClientConfig;
+import com.webank.wedatasphere.linkis.httpclient.dws.config.DWSClientConfigBuilder;
+import com.webank.wedatasphere.linkis.ujes.client.UJESClient;
+import com.webank.wedatasphere.linkis.ujes.client.UJESClientImpl;
+import com.webank.wedatasphere.linkis.ujes.client.request.JobExecuteAction;
+import com.webank.wedatasphere.linkis.ujes.client.request.ResultSetAction;
+import com.webank.wedatasphere.linkis.ujes.client.response.JobExecuteResult;
+import com.webank.wedatasphere.linkis.ujes.client.response.JobInfoResult;
+import com.webank.wedatasphere.linkis.ujes.client.response.JobProgressResult;
+import org.apache.commons.io.IOUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+public class LinkisClientTest {
+
+    public static void main(String[] args){
+
+        String user = "hadoop";
+        String executeCode = "show databases;";
+
+        // 1. Configure DWSClientBuilder, get a DWSClientConfig through DWSClientBuilder
+        DWSClientConfig clientConfig = ((DWSClientConfigBuilder) (DWSClientConfigBuilder.newBuilder()
+                .addServerUrl("http://${ip}:${port}")  //Specify ServerUrl, the address of the linkis gateway, such as http://{ip}:{port}
+                .connectionTimeout(30000)   //connectionTimeOut Client connection timeout
+                .discoveryEnabled(false).discoveryFrequency(1, TimeUnit.MINUTES)  //Whether to enable registration discovery, if enabled, the newly launched Gateway will be automatically discovered
+                .loadbalancerEnabled(true)  // Whether to enable load balancing, if registration discovery is not enabled, load balancing is meaningless
+                .maxConnectionSize(5)   //Specify the maximum number of connections, that is, the maximum number of concurrent
+                .retryEnabled(false).readTimeout(30000)   //Execution failed, whether to allow retry
+                .setAuthenticationStrategy(new StaticAuthenticationStrategy())   //AuthenticationStrategy Linkis login authentication method
+                .setAuthTokenKey("${username}").setAuthTokenValue("${password}")))  //Authentication key, generally the user name; authentication value, generally the password corresponding to the user name
+                .setDWSVersion("v1").build();  //The version of the linkis backend protocol, the current version is v1
+
+        // 2. Obtain a UJESClient through DWSClientConfig
+        UJESClient client = new UJESClientImpl(clientConfig);
+
+        try {
+            // 3. Start code execution
+            System.out.println("user : " + user + ", code : [" + executeCode + "]");
+            Map<String, Object> startupMap = new HashMap<String, Object>();
+            startupMap.put("wds.linkis.yarnqueue", "default"); // A variety of startup parameters can be stored in startupMap, see linkis management console configuration
+            JobExecuteResult jobExecuteResult = client.execute(JobExecuteAction.builder()
+                    .setCreator("linkisClient-Test")  //creator，the system name of the client requesting linkis, used for system-level isolation
+                    .addExecuteCode(executeCode)   //ExecutionCode Requested code
+                    .setEngineType((JobExecuteAction.EngineType) JobExecuteAction.EngineType$.MODULE$.HIVE()) // The execution engine type of the linkis that you want to request, such as Spark hive, etc.
+                    .setUser(user)   //User，Requesting users; used for user-level multi-tenant isolation
+                    .setStartupParams(startupMap)
+                    .build());
+            System.out.println("execId: " + jobExecuteResult.getExecID() + ", taskId: " + jobExecuteResult.taskID());
+
+            // 4. Get the execution status of the script
+            JobInfoResult jobInfoResult = client.getJobInfo(jobExecuteResult);
+            int sleepTimeMills = 1000;
+            while(!jobInfoResult.isCompleted()) {
+                // 5. Get the execution progress of the script
+                JobProgressResult progress = client.progress(jobExecuteResult);
+                Utils.sleepQuietly(sleepTimeMills);
+                jobInfoResult = client.getJobInfo(jobExecuteResult);
+            }
+
+            // 6. Get the job information of the script
+            JobInfoResult jobInfo = client.getJobInfo(jobExecuteResult);
+            // 7. Get a list of result sets (if the user submits multiple SQL at a time, multiple result sets will be generated)
+            String resultSet = jobInfo.getResultSetList(client)[0];
+            // 8. Get a specific result set through a result set information
+            Object fileContents = client.resultSet(ResultSetAction.builder().setPath(resultSet).setUser(jobExecuteResult.getUser()).build()).getFileContent();
+            System.out.println("fileContents: " + fileContents);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            IOUtils.closeQuietly(client);
+        }
+        IOUtils.closeQuietly(client);
+    }
+}
+```
+
+Run the above code to interact with Linkis
+
+### 3. Scala test code:
+
+```scala
+package com.webank.wedatasphere.linkis.client.test
+
+import java.util.concurrent.TimeUnit
+
+import com.webank.wedatasphere.linkis.common.utils.Utils
+import com.webank.wedatasphere.linkis.httpclient.dws.authentication.StaticAuthenticationStrategy
+import com.webank.wedatasphere.linkis.httpclient.dws.config.DWSClientConfigBuilder
+import com.webank.wedatasphere.linkis.ujes.client.UJESClient
+import com.webank.wedatasphere.linkis.ujes.client.request.JobExecuteAction.EngineType
+import com.webank.wedatasphere.linkis.ujes.client.request.{JobExecuteAction, ResultSetAction}
+import org.apache.commons.io.IOUtils
+
+object LinkisClientImplTest extends App {
+
+  var executeCode = "show databases;"
+  var user = "hadoop"
+
+  // 1. Configure DWSClientBuilder, get a DWSClientConfig through DWSClientBuilder
+  val clientConfig = DWSClientConfigBuilder.newBuilder()
+    .addServerUrl("http://${ip}:${port}") //Specify ServerUrl, the address of the Linkis server-side gateway, such as http://{ip}:{port}
+    .connectionTimeout(30000) //connectionTimeOut client connection timeout
+    .discoveryEnabled(false).discoveryFrequency(1, TimeUnit.MINUTES) //Whether to enable registration discovery, if enabled, the newly launched Gateway will be automatically discovered
+    .loadbalancerEnabled(true) // Whether to enable load balancing, if registration discovery is not enabled, load balancing is meaningless
+    .maxConnectionSize(5) //Specify the maximum number of connections, that is, the maximum number of concurrent
+    .retryEnabled(false).readTimeout(30000) //execution failed, whether to allow retry
+    .setAuthenticationStrategy(new StaticAuthenticationStrategy()) //AuthenticationStrategy Linkis authentication method
+    .setAuthTokenKey("${username}").setAuthTokenValue("${password}") //Authentication key, generally the user name; authentication value, generally the password corresponding to the user name
+    .setDWSVersion("v1").build() //Linkis backend protocol version, the current version is v1
+
+  // 2. Get a UJESClient through DWSClientConfig
+  val client = UJESClient(clientConfig)
+  
+  try {
+    // 3. Start code execution
+    println("user: "+ user + ", code: [" + executeCode + "]")
+    val startupMap = new java.util.HashMap[String, Any]()
+    startupMap.put("wds.linkis.yarnqueue", "default") //Startup parameter configuration
+    val jobExecuteResult = client.execute(JobExecuteAction.builder()
+      .setCreator("LinkisClient-Test") //creator, requesting the system name of the Linkis client, used for system-level isolation
+      .addExecuteCode(executeCode) //ExecutionCode The code to be executed
+      .setEngineType(EngineType.SPARK) // The execution engine type of Linkis that you want to request, such as Spark hive, etc.
+      .setStartupParams(startupMap)
+      .setUser(user).build()) //User, request user; used for user-level multi-tenant isolation
+    println("execId: "+ jobExecuteResult.getExecID + ", taskId:" + jobExecuteResult.taskID)
+    
+    // 4. Get the execution status of the script
+    var jobInfoResult = client.getJobInfo(jobExecuteResult)
+    val sleepTimeMills: Int = 1000
+    while (!jobInfoResult.isCompleted) {
+      // 5. Get the execution progress of the script
+      val progress = client.progress(jobExecuteResult)
+      val progressInfo = if (progress.getProgressInfo != null) progress.getProgressInfo.toList else List.empty
+      println("progress: "+ progress.getProgress + ", progressInfo:" + progressInfo)
+      Utils.sleepQuietly(sleepTimeMills)
+      jobInfoResult = client.getJobInfo(jobExecuteResult)
+    }
+    if (!jobInfoResult.isSucceed) {
+      println("Failed to execute job: "+ jobInfoResult.getMessage)
+      throw new Exception(jobInfoResult.getMessage)
+    }
+
+    // 6. Get the job information of the script
+    val jobInfo = client.getJobInfo(jobExecuteResult)
+    // 7. Get the list of result sets (if the user submits multiple SQL at a time, multiple result sets will be generated)
+    val resultSetList = jobInfoResult.getResultSetList(client)
+    println("All result set list:")
+    resultSetList.foreach(println)
+    val oneResultSet = jobInfo.getResultSetList(client).head
+    // 8. Get a specific result set through a result set information
+    val fileContents = client.resultSet(ResultSetAction.builder().setPath(oneResultSet).setUser(jobExecuteResult.getUser).build()).getFileContent
+    println("First fileContents: ")
+    println(fileContents)
+  } catch {
+    case e: Exception => {
+      e.printStackTrace()
+    }
+  }
+  IOUtils.closeQuietly(client)
+}
+```
+
+## 3. Linkis1.0 new submit interface with Label support
+
+Linkis1.0 adds the client.submit method, which is used to adapt with the new task execution interface of 1.0, and supports the input of Label and other parameters
+
+### 3.1 Java Test Class
+
+```java
+package com.webank.wedatasphere.linkis.client.test;
+
+import com.webank.wedatasphere.linkis.common.utils.Utils;
+import com.webank.wedatasphere.linkis.httpclient.dws.authentication.StaticAuthenticationStrategy;
+import com.webank.wedatasphere.linkis.httpclient.dws.config.DWSClientConfig;
+import com.webank.wedatasphere.linkis.httpclient.dws.config.DWSClientConfigBuilder;
+import com.webank.wedatasphere.linkis.manager.label.constant.LabelKeyConstant;
+import com.webank.wedatasphere.linkis.protocol.constants.TaskConstant;
+import com.webank.wedatasphere.linkis.ujes.client.UJESClient;
+import com.webank.wedatasphere.linkis.ujes.client.UJESClientImpl;
+import com.webank.wedatasphere.linkis.ujes.client.request.JobSubmitAction;
+import com.webank.wedatasphere.linkis.ujes.client.request.ResultSetAction;
+import com.webank.wedatasphere.linkis.ujes.client.response.JobExecuteResult;
+import com.webank.wedatasphere.linkis.ujes.client.response.JobInfoResult;
+import com.webank.wedatasphere.linkis.ujes.client.response.JobProgressResult;
+import org.apache.commons.io.IOUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+public class JavaClientTest {
+
+    public static void main(String[] args){
+
+        String user = "hadoop";
+        String executeCode = "show tables";
+
+        // 1. Configure ClientBuilder and get ClientConfig
+        DWSClientConfig clientConfig = ((DWSClientConfigBuilder) (DWSClientConfigBuilder.newBuilder()
+                .addServerUrl("http://${ip}:${port}") //Specify ServerUrl, the address of the linkis server-side gateway, such as http://{ip}:{port}
+                .connectionTimeout(30000) //connectionTimeOut client connection timeout
+                .discoveryEnabled(false).discoveryFrequency(1, TimeUnit.MINUTES) //Whether to enable registration discovery, if enabled, the newly launched Gateway will be automatically discovered
+                .loadbalancerEnabled(true) // Whether to enable load balancing, if registration discovery is not enabled, load balancing is meaningless
+                .maxConnectionSize(5) //Specify the maximum number of connections, that is, the maximum number of concurrent
+                .retryEnabled(false).readTimeout(30000) //execution failed, whether to allow retry
+                .setAuthenticationStrategy(new StaticAuthenticationStrategy()) //AuthenticationStrategy Linkis authentication method
+                .setAuthTokenKey("${username}").setAuthTokenValue("${password}"))) //Authentication key, generally the user name; authentication value, generally the password corresponding to the user name
+                .setDWSVersion("v1").build(); //Linkis background protocol version, the current version is v1
+
+        // 2. Get a UJESClient through DWSClientConfig
+        UJESClient client = new UJESClientImpl(clientConfig);
+
+        try {
+            // 3. Start code execution
+            System.out.println("user: "+ user + ", code: [" + executeCode + "]");
+            Map<String, Object> startupMap = new HashMap<String, Object>();
+            // A variety of startup parameters can be stored in startupMap, see linkis management console configuration
+            startupMap.put("wds.linkis.yarnqueue", "q02");
+            //Specify Label
+            Map<String, Object> labels = new HashMap<String, Object>();
+            //Add the label that this execution depends on: EngineTypeLabel/UserCreatorLabel/EngineRunTypeLabel
+            labels.put(LabelKeyConstant.ENGINE_TYPE_KEY, "hive-1.2.1");
+            labels.put(LabelKeyConstant.USER_CREATOR_TYPE_KEY, "hadoop-IDE");
+            labels.put(LabelKeyConstant.ENGINE_RUN_TYPE_KEY, "hql");
+            //Specify source
+            Map<String, Object> source = new HashMap<String, Object>();
+            source.put(TaskConstant.SCRIPTPATH, "LinkisClient-test");
+            JobExecuteResult jobExecuteResult = client.submit( JobSubmitAction.builder()
+                    .addExecuteCode(executeCode)
+                    .setStartupParams(startupMap)
+                    .setUser(user)//Job submit user
+                    .addExecuteUser(user)//The actual execution user
+                    .setLabels(labels)
+                    .setSource(source)
+                    .build()
+            );
+            System.out.println("execId: "+ jobExecuteResult.getExecID() + ", taskId:" + jobExecuteResult.taskID());
+
+            // 4. Get the execution status of the script
+            JobInfoResult jobInfoResult = client.getJobInfo(jobExecuteResult);
+            int sleepTimeMills = 1000;
+            while(!jobInfoResult.isCompleted()) {
+                // 5. Get the execution progress of the script
+                JobProgressResult progress = client.progress(jobExecuteResult);
+                Utils.sleepQuietly(sleepTimeMills);
+                jobInfoResult = client.getJobInfo(jobExecuteResult);
+            }
+
+            // 6. Get the job information of the script
+            JobInfoResult jobInfo = client.getJobInfo(jobExecuteResult);
+            // 7. Get the list of result sets (if the user submits multiple SQL at a time, multiple result sets will be generated)
+            String resultSet = jobInfo.getResultSetList(client)[0];
+            // 8. Get a specific result set through a result set information
+            Object fileContents = client.resultSet(ResultSetAction.builder().setPath(resultSet).setUser(jobExecuteResult.getUser()).build()).getFileContent();
+            System.out.println("fileContents: "+ fileContents);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            IOUtils.closeQuietly(client);
+        }
+        IOUtils.closeQuietly(client);
+    }
+}
+
+```
+
+### 3.2 Scala Test Class
+
+```scala
+package com.webank.wedatasphere.linkis.client.test
+
+import java.util
+import java.util.concurrent.TimeUnit
+
+import com.webank.wedatasphere.linkis.common.utils.Utils
+import com.webank.wedatasphere.linkis.httpclient.dws.authentication.StaticAuthenticationStrategy
+import com.webank.wedatasphere.linkis.httpclient.dws.config.DWSClientConfigBuilder
+import com.webank.wedatasphere.linkis.manager.label.constant.LabelKeyConstant
+import com.webank.wedatasphere.linkis.protocol.constants.TaskConstant
+import com.webank.wedatasphere.linkis.ujes.client.UJESClient
+import com.webank.wedatasphere.linkis.ujes.client.request.{JobSubmitAction, ResultSetAction}
+import org.apache.commons.io.IOUtils
+
+
+object ScalaClientTest {
+
+  def main(args: Array[String]): Unit = {
+    val executeCode = "show tables"
+    val user = "hadoop"
+
+    // 1. Configure DWSClientBuilder, get a DWSClientConfig through DWSClientBuilder
+    val clientConfig = DWSClientConfigBuilder.newBuilder()
+      .addServerUrl("http://${ip}:${port}") //Specify ServerUrl, the address of the Linkis server-side gateway, such as http://{ip}:{port}
+      .connectionTimeout(30000) //connectionTimeOut client connection timeout
+      .discoveryEnabled(false).discoveryFrequency(1, TimeUnit.MINUTES) //Whether to enable registration discovery, if enabled, the newly launched Gateway will be automatically discovered
+      .loadbalancerEnabled(true) // Whether to enable load balancing, if registration discovery is not enabled, load balancing is meaningless
+      .maxConnectionSize(5) //Specify the maximum number of connections, that is, the maximum number of concurrent
+      .retryEnabled(false).readTimeout(30000) //execution failed, whether to allow retry
+      .setAuthenticationStrategy(new StaticAuthenticationStrategy()) //AuthenticationStrategy Linkis authentication method
+      .setAuthTokenKey("${username}").setAuthTokenValue("${password}") //Authentication key, generally the user name; authentication value, generally the password corresponding to the user name
+      .setDWSVersion("v1").build() //Linkis backend protocol version, the current version is v1
+
+    // 2. Get a UJESClient through DWSClientConfig
+    val client = UJESClient(clientConfig)
+
+    try {
+      // 3. Start code execution
+      println("user: "+ user + ", code: [" + executeCode + "]")
+      val startupMap = new java.util.HashMap[String, Any]()
+      startupMap.put("wds.linkis.yarnqueue", "q02") //Startup parameter configuration
+      //Specify Label
+      val labels: util.Map[String, Any] = new util.HashMap[String, Any]
+      //Add the label that this execution depends on, such as engineLabel
+      labels.put(LabelKeyConstant.ENGINE_TYPE_KEY, "hive-1.2.1")
+      labels.put(LabelKeyConstant.USER_CREATOR_TYPE_KEY, "hadoop-IDE")
+      labels.put(LabelKeyConstant.ENGINE_RUN_TYPE_KEY, "hql")
+      //Specify source
+      val source: util.Map[String, Any] = new util.HashMap[String, Any]
+      source.put(TaskConstant.SCRIPTPATH, "LinkisClient-test")
+      val jobExecuteResult = client.submit(JobSubmitAction.builder
+          .addExecuteCode(executeCode)
+          .setStartupParams(startupMap)
+          .setUser(user) //Job submit user
+          .addExecuteUser(user) //The actual execution user
+          .setLabels(labels)
+          .setSource(source)
+          .build) //User, requesting user; used for user-level multi-tenant isolation
+      println("execId: "+ jobExecuteResult.getExecID + ", taskId:" + jobExecuteResult.taskID)
+
+      // 4. Get the execution status of the script
+      var jobInfoResult = client.getJobInfo(jobExecuteResult)
+      val sleepTimeMills: Int = 1000
+      while (!jobInfoResult.isCompleted) {
+        // 5. Get the execution progress of the script
+        val progress = client.progress(jobExecuteResult)
+        val progressInfo = if (progress.getProgressInfo != null) progress.getProgressInfo.toList else List.empty
+        println("progress: "+ progress.getProgress + ", progressInfo:" + progressInfo)
+        Utils.sleepQuietly(sleepTimeMills)
+        jobInfoResult = client.getJobInfo(jobExecuteResult)
+      }
+      if (!jobInfoResult.isSucceed) {
+        println("Failed to execute job: "+ jobInfoResult.getMessage)
+        throw new Exception(jobInfoResult.getMessage)
+      }
+
+      // 6. Get the job information of the script
+      val jobInfo = client.getJobInfo(jobExecuteResult)
+      // 7. Get the list of result sets (if the user submits multiple SQL at a time, multiple result sets will be generated)
+      val resultSetList = jobInfoResult.getResultSetList(client)
+      println("All result set list:")
+      resultSetList.foreach(println)
+      val oneResultSet = jobInfo.getResultSetList(client).head
+      // 8. Get a specific result set through a result set information
+      val fileContents = client.resultSet(ResultSetAction.builder().setPath(oneResultSet).setUser(jobExecuteResult.getUser).build()).getFileContent
+      println("First fileContents: ")
+      println(fileContents)
+    } catch {
+      case e: Exception => {
+        e.printStackTrace()
+      }
+    }
+    IOUtils.closeQuietly(client)
+  }
+
+}
+
+```
